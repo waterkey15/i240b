@@ -1,0 +1,37 @@
+hkilic2@g7-30:/import/linux/home1/hkilic2$ ls
+Arduino  Desktop    git-repos  Music	 Public     tmp      ultiplication
+cs120	 Documents  i240b      Pictures  submit     total    ultiplication.c
+cs240	 Downloads  lab        projects  Templates  total.c  Videos
+hkilic2@g7-30:/import/linux/home1/hkilic2$ cd i240b
+hkilic2@g7-30:/import/linux/home1/hkilic2/i240b$ ls
+README.md  submit
+hkilic2@g7-30:/import/linux/home1/hkilic2/i240b$ cat submit/
+cat: submit/: Is a directory
+hkilic2@g7-30:/import/linux/home1/hkilic2/i240b$ cd 
+hkilic2@g7-30:~$ cd i240b
+hkilic2@g7-30:~/i240b$ cd 
+.git/      README.md  submit/    
+hkilic2@g7-30:~/i240b$ cd 
+.git/      README.md  submit/    
+hkilic2@g7-30:~/i240b$ cd submit/
+hkilic2@g7-30:~/i240b/submit$ ls
+hkilic2@g7-30:~/i240b/submit$ cd
+hkilic2@g7-30:~$ ls
+Arduino  Desktop    git-repos  Music	 Public     tmp      ultiplication
+cs120	 Documents  i240b      Pictures  submit     total    ultiplication.c
+cs240	 Downloads  lab        projects  Templates  total.c  Videos
+hkilic2@g7-30:~$ cd tmp
+hkilic2@g7-30:~/tmp$ ls
+hkilic2@g7-30:~/tmp$ la
+bash: la: command not found
+hkilic2@g7-30:~/tmp$ la -la
+bash: la: command not found
+hkilic2@g7-30:~/tmp$ cd ../
+hkilic2@g7-30:~$ ls
+Arduino  Desktop    git-repos  Music	 Public     tmp      ultiplication
+cs120	 Documents  i240b      Pictures  submit     total    ultiplication.c
+cs240	 Downloads  lab        projects  Templates  total.c  Videos
+hkilic2@g7-30:~$ cd tmp/
+hkilic2@g7-30:~/tmp$ gedit lab0.LOG
+
+Raushan, this is a note from Connor, the other TA. When you grade this please do not take off points for an incorrect log file. Something went wrong in the creation of the file however the student did complete all the work. Please message me via text or groupme if you have any questions. Thanks.
