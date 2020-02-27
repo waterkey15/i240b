@@ -1,0 +1,878 @@
+Script started on 2020-02-27 14:28:46-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+hkilic2@g7-21:~/i240b/submit/lab5$ ls
+lab5.LOG
+hkilic2@g7-21:~/i240b/submit/lab5$ git pull
+remote: Enumerating objects: 6, done.[K
+remote: Counting objects:  16% (1/6)[Kremote: Counting objects:  33% (2/6)[Kremote: Counting objects:  50% (3/6)[Kremote: Counting objects:  66% (4/6)[Kremote: Counting objects:  83% (5/6)[Kremote: Counting objects: 100% (6/6)[Kremote: Counting objects: 100% (6/6), done.[K
+remote: Compressing objects:  33% (1/3)[Kremote: Compressing objects:  66% (2/3)[Kremote: Compressing objects: 100% (3/3)[Kremote: Compressing objects: 100% (3/3), done.[K
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0[K
+Unpacking objects:  25% (1/4)   Unpacking objects:  50% (2/4)   Unpacking objects:  75% (3/4)   Unpacking objects: 100% (4/4)   Unpacking objects: 100% (4/4), done.
+From github.com:waterkey15/i240b
+   9fd2105..ee666d7  master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> lab5
+
+hkilic2@g7-21:~/i240b/submit/lab5$ ls
+lab5.LOG
+hkilic2@g7-21:~/i240b/submit/lab5$ lsgit pullls[K[Kgit copy
+git: 'copy' is not a git command. See 'git --help'.
+
+The most similar commands are
+	apply
+	clone
+hkilic2@g7-21:~/i240b/submit/lab5$ git clone
+fatal: You must specify a repository to clone.
+
+usage: git clone [<options>] [--] <repo> [<dir>]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    -n, --no-checkout     don't create a checkout
+    --bare                create a bare repository
+    --mirror              create a mirror repository (implies bare)
+    -l, --local           to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    -s, --shared          setup as shared repository
+    --recurse-submodules[=<pathspec>]
+                          initialize submodules in the clone
+    -j, --jobs <n>        number of submodules cloned in parallel
+    --template <template-directory>
+                          directory from which templates will be used
+    --reference <repo>    reference repository
+    --reference-if-able <repo>
+                          reference repository
+    --dissociate          use --reference only while cloning
+    -o, --origin <name>   use <name> instead of 'origin' to track upstream
+    -b, --branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --upload-pack <path>
+                          path to git-upload-pack on the remote
+    --depth <depth>       create a shallow clone of that depth
+    --shallow-since <time>
+                          create a shallow clone since a specific time
+    --shallow-exclude <revision>
+                          deepen history of shallow clone, excluding rev
+    --single-branch       clone only one branch, HEAD or --branch
+    --no-tags             don't clone any tags, and make later fetches not to follow them
+    --shallow-submodules  any cloned submodules will be shallow
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -c, --config <key=value>
+                          set config inside the new repository
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+    --filter <args>       object filtering
+
+hkilic2@g7-21:~/i240b/submit/lab5$ cd ~/i240?/submit/lab5
+hkilic2@g7-21:~/i240b/submit/lab5$ cp -r ~/cs240/labs/lab5/exercises .
+hkilic2@g7-21:~/i240b/submit/lab5$ ls
+exercises  lab5.LOG
+hkilic2@g7-21:~/i240b/submit/lab5$ cd exercises/1-animal
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ ls -l
+total 8
+-rw-r--r-- 1 hkilic2 hkilic2 608 Feb 27 14:32 animal.hh
+-rw-r--r-- 1 hkilic2 hkilic2 489 Feb 27 14:32 main.cc
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ gedit main.cc
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ gedit animal.hh
+^Z
+[1]+  Stopped                 gedit animal.hh
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ -f ../Makefile
+bash: -f: command not found
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:10:24:[m[K [01;31m[Kerror: [m[Kinvalid abstract type ‘[01m[KAnimal[m[K’ for ‘[01m[Kanimals[m[K’
+   const Animal animals[[01;31m[K][m[K = { fido, fluffy };
+                        [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:3:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KAnimal[m[K’:
+ class [01;36m[KAnimal[m[K {
+       [01;36m[K^~~~~~[m[K
+[01m[Kanimal.hh:8:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says() const[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  const = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   const Animal animals[] = { fido, fluffy [01;31m[K}[m[K;
+                                           [01;31m[K^[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+[01m[Kmain.cc:11:25:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kconst Animal* animals [][m[K’
+   const Animal *animals[[01;31m[K][m[K = {
+                         [01;31m[K^[m[K
+[01m[Kmain.cc:10:16:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Kconst Animal animals [2][m[K’
+   const Animal [01;36m[Kanimals[m[K[] = { fido, fluffy };
+                [01;36m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:23:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   for (auto animalP : [01;31m[Kanimals[m[K) {
+                       [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:13:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[KanimalP[m[K’ to be of abstract type ‘[01m[KAnimal[m[K’
+   for (auto [01;31m[KanimalP[m[K : animals) {
+             [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:20:19:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP[01;31m[K->[m[Kname << " says " << animalP->says() << std::endl;
+                   [01;31m[K^~[m[K
+[01m[Kmain.cc:20:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP->name << " says " << animalP[01;31m[K->[m[Ksays() << std::endl;
+                                                [01;31m[K^~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ maek
+bash: maek: command not found
+[1]+  Killed                  gedit animal.hh
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make
+make: *** No targets specified and no makefile found.  Stop.
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make
+make: *** No targets specified and no makefile found.  Stop.
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ makeekke -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:7:7:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[Kfluffy[m[K’ to be of abstract type ‘[01m[KCat[m[K’
+   Cat [01;31m[Kfluffy[m[K("fluffy"), simba("simba");
+       [01;31m[K^~~~~~[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:24:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KCat[m[K’:
+ class [01;36m[KCat[m[K : public Animal {
+       [01;36m[K^~~[m[K
+[01m[Kanimal.hh:8:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says()[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:7:25:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[Ksimba[m[K’ to be of abstract type ‘[01m[KCat[m[K’
+   Cat fluffy("fluffy"), [01;31m[Ksimba[m[K("simba");
+                         [01;31m[K^~~~~[m[K
+[01m[Kmain.cc:8:7:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[Kfido[m[K’ to be of abstract type ‘[01m[KDog[m[K’
+   Dog [01;31m[Kfido[m[K("fido"), rufus("rufus");
+       [01;31m[K^~~~[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:14:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KDog[m[K’:
+ class [01;36m[KDog[m[K : public Animal {
+       [01;36m[K^~~[m[K
+[01m[Kanimal.hh:8:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says()[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:8:21:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[Krufus[m[K’ to be of abstract type ‘[01m[KDog[m[K’
+   Dog fido("fido"), [01;31m[Krufus[m[K("rufus");
+                     [01;31m[K^~~~~[m[K
+[01m[Kmain.cc:9:7:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[Kbossy[m[K’ to be of abstract type ‘[01m[KCow[m[K’
+   Cow [01;31m[Kbossy[m[K("bossy"), bessie("bessie");
+       [01;31m[K^~~~~[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:34:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KCow[m[K’:
+ class [01;36m[KCow[m[K : public Animal {
+       [01;36m[K^~~[m[K
+[01m[Kanimal.hh:8:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says()[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:9:23:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[Kbessie[m[K’ to be of abstract type ‘[01m[KCow[m[K’
+   Cow bossy("bossy"), [01;31m[Kbessie[m[K("bessie");
+                       [01;31m[K^~~~~~[m[K
+[01m[Kmain.cc:10:24:[m[K [01;31m[Kerror: [m[Kinvalid abstract type ‘[01m[KAnimal[m[K’ for ‘[01m[Kanimals[m[K’
+   const Animal animals[[01;31m[K][m[K = { fido, fluffy };
+                        [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:3:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KAnimal[m[K’:
+ class [01;36m[KAnimal[m[K {
+       [01;36m[K^~~~~~[m[K
+[01m[Kanimal.hh:8:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says()[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   const Animal animals[] = { fido, fluffy [01;31m[K}[m[K;
+                                           [01;31m[K^[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+[01m[Kmain.cc:11:25:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kconst Animal* animals [][m[K’
+   const Animal *animals[[01;31m[K][m[K = {
+                         [01;31m[K^[m[K
+[01m[Kmain.cc:10:16:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Kconst Animal animals [2][m[K’
+   const Animal [01;36m[Kanimals[m[K[] = { fido, fluffy };
+                [01;36m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:23:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   for (auto animalP : [01;31m[Kanimals[m[K) {
+                       [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:13:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[KanimalP[m[K’ to be of abstract type ‘[01m[KAnimal[m[K’
+   for (auto [01;31m[KanimalP[m[K : animals) {
+             [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:20:19:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP[01;31m[K->[m[Kname << " says " << animalP->says() << std::endl;
+                   [01;31m[K^~[m[K
+[01m[Kmain.cc:20:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP->name << " says " << animalP[01;31m[K->[m[Ksays() << std::endl;
+                                                [01;31m[K^~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile[Kekke -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:14:26:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K([m[K’ token
+ class Dog : public Animal[01;31m[K([m[K) {
+                          [01;31m[K^[m[K
+[01m[Kanimal.hh:14:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K)[m[K’ token
+ class Dog : public Animal([01;31m[K)[m[K {
+                           [01;31m[K^[m[K
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:8:11:[m[K [01;31m[Kerror: [m[Kvariable ‘[01m[KDog fido[m[K’ has initializer but incomplete type
+   Dog fido[01;31m[K([m[K"fido"), rufus("rufus");
+           [01;31m[K^[m[K
+[01m[Kmain.cc:8:26:[m[K [01;31m[Kerror: [m[Kvariable ‘[01m[KDog rufus[m[K’ has initializer but incomplete type
+   Dog fido("fido"), rufus[01;31m[K([m[K"rufus");
+                          [01;31m[K^[m[K
+[01m[Kmain.cc:10:24:[m[K [01;31m[Kerror: [m[Kinvalid abstract type ‘[01m[KAnimal[m[K’ for ‘[01m[Kanimals[m[K’
+   const Animal animals[[01;31m[K][m[K = { fido, fluffy };
+                        [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:3:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KAnimal[m[K’:
+ class [01;36m[KAnimal[m[K {
+       [01;36m[K^~~~~~[m[K
+[01m[Kanimal.hh:8:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says() const[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  const = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:11:25:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kconst Animal* animals [][m[K’
+   const Animal *animals[[01;31m[K][m[K = {
+                         [01;31m[K^[m[K
+[01m[Kmain.cc:10:16:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Kconst Animal animals [1][m[K’
+   const Animal [01;36m[Kanimals[m[K[] = { fido, fluffy };
+                [01;36m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:23:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   for (auto animalP : [01;31m[Kanimals[m[K) {
+                       [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:13:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[KanimalP[m[K’ to be of abstract type ‘[01m[KAnimal[m[K’
+   for (auto [01;31m[KanimalP[m[K : animals) {
+             [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:20:19:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP[01;31m[K->[m[Kname << " says " << animalP->says() << std::endl;
+                   [01;31m[K^~[m[K
+[01m[Kmain.cc:20:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP->name << " says " << animalP[01;31m[K->[m[Ksays() << std::endl;
+                                                [01;31m[K^~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:14:28:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+ class Dog : public Animal{}[01;31m[K [m[K{
+                            [01;31m[K^[m[K
+                            [32m[K;[m[K
+[01m[Kanimal.hh:14:29:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+ class Dog : public Animal{} [01;31m[K{[m[K
+                             [01;31m[K^[m[K
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:8:18:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KDog::Dog(const char [5])[m[K’
+   Dog fido("fido"[01;31m[K)[m[K, rufus("rufus");
+                  [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:14:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KDog::Dog(const Dog&)[m[K’
+ class [01;36m[KDog[m[K : public Animal{} {
+       [01;36m[K^~~[m[K
+[01m[Kanimal.hh:14:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst char [5][m[K’ to ‘[01m[Kconst Dog&[m[K’
+[01m[Kanimal.hh:14:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KDog::Dog(Dog&&)[m[K’
+[01m[Kanimal.hh:14:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst char [5][m[K’ to ‘[01m[KDog&&[m[K’
+[01m[Kmain.cc:8:7:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[Kfido[m[K’ to be of abstract type ‘[01m[KDog[m[K’
+   Dog [01;31m[Kfido[m[K("fido"), rufus("rufus");
+       [01;31m[K^~~~[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:14:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KDog[m[K’:
+ class [01;36m[KDog[m[K : public Animal{} {
+       [01;36m[K^~~[m[K
+[01m[Kanimal.hh:8:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says() const[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  const = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:8:34:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KDog::Dog(const char [6])[m[K’
+   Dog fido("fido"), rufus("rufus"[01;31m[K)[m[K;
+                                  [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:14:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KDog::Dog(const Dog&)[m[K’
+ class [01;36m[KDog[m[K : public Animal{} {
+       [01;36m[K^~~[m[K
+[01m[Kanimal.hh:14:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst char [6][m[K’ to ‘[01m[Kconst Dog&[m[K’
+[01m[Kanimal.hh:14:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KDog::Dog(Dog&&)[m[K’
+[01m[Kanimal.hh:14:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst char [6][m[K’ to ‘[01m[KDog&&[m[K’
+[01m[Kmain.cc:8:21:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[Krufus[m[K’ to be of abstract type ‘[01m[KDog[m[K’
+   Dog fido("fido"), [01;31m[Krufus[m[K("rufus");
+                     [01;31m[K^~~~~[m[K
+[01m[Kmain.cc:10:24:[m[K [01;31m[Kerror: [m[Kinvalid abstract type ‘[01m[KAnimal[m[K’ for ‘[01m[Kanimals[m[K’
+   const Animal animals[[01;31m[K][m[K = { fido, fluffy };
+                        [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:3:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KAnimal[m[K’:
+ class [01;36m[KAnimal[m[K {
+       [01;36m[K^~~~~~[m[K
+[01m[Kanimal.hh:8:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says() const[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  const = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   const Animal animals[] = { fido, fluffy [01;31m[K}[m[K;
+                                           [01;31m[K^[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+[01m[Kmain.cc:11:25:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kconst Animal* animals [][m[K’
+   const Animal *animals[[01;31m[K][m[K = {
+                         [01;31m[K^[m[K
+[01m[Kmain.cc:10:16:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Kconst Animal animals [2][m[K’
+   const Animal [01;36m[Kanimals[m[K[] = { fido, fluffy };
+                [01;36m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:23:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   for (auto animalP : [01;31m[Kanimals[m[K) {
+                       [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:13:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[KanimalP[m[K’ to be of abstract type ‘[01m[KAnimal[m[K’
+   for (auto [01;31m[KanimalP[m[K : animals) {
+             [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:20:19:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP[01;31m[K->[m[Kname << " says " << animalP->says() << std::endl;
+                   [01;31m[K^~[m[K
+[01m[Kmain.cc:20:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP->name << " says " << animalP[01;31m[K->[m[Ksays() << std::endl;
+                                                [01;31m[K^~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:[m[K In constructor ‘[01m[KDog::Dog(std::__cxx11::string)[m[K’:
+[01m[Kanimal.hh:16:46:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kname[m[K’
+   Dog(std::string name) : Animal(std::string [01;31m[Kname[m[K) {}
+                                              [01;31m[K^~~~[m[K
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:10:24:[m[K [01;31m[Kerror: [m[Kinvalid abstract type ‘[01m[KAnimal[m[K’ for ‘[01m[Kanimals[m[K’
+   const Animal animals[[01;31m[K][m[K = { fido, fluffy };
+                        [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:3:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KAnimal[m[K’:
+ class [01;36m[KAnimal[m[K {
+       [01;36m[K^~~~~~[m[K
+[01m[Kanimal.hh:8:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says() const[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  const = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   const Animal animals[] = { fido, fluffy [01;31m[K}[m[K;
+                                           [01;31m[K^[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+[01m[Kmain.cc:11:25:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kconst Animal* animals [][m[K’
+   const Animal *animals[[01;31m[K][m[K = {
+                         [01;31m[K^[m[K
+[01m[Kmain.cc:10:16:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Kconst Animal animals [2][m[K’
+   const Animal [01;36m[Kanimals[m[K[] = { fido, fluffy };
+                [01;36m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:23:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   for (auto animalP : [01;31m[Kanimals[m[K) {
+                       [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:13:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[KanimalP[m[K’ to be of abstract type ‘[01m[KAnimal[m[K’
+   for (auto [01;31m[KanimalP[m[K : animals) {
+             [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:20:19:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP[01;31m[K->[m[Kname << " says " << animalP->says() << std::endl;
+                   [01;31m[K^~[m[K
+[01m[Kmain.cc:20:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP->name << " says " << animalP[01;31m[K->[m[Ksays() << std::endl;
+                                                [01;31m[K^~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:10:24:[m[K [01;31m[Kerror: [m[Kinvalid abstract type ‘[01m[KAnimal[m[K’ for ‘[01m[Kanimals[m[K’
+   const Animal animals[[01;31m[K][m[K = { fido, fluffy };
+                        [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:4:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KAnimal[m[K’:
+ class [01;36m[KAnimal[m[K {
+       [01;36m[K^~~~~~[m[K
+[01m[Kanimal.hh:9:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says() const[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  const = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   const Animal animals[] = { fido, fluffy [01;31m[K}[m[K;
+                                           [01;31m[K^[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+[01m[Kmain.cc:11:25:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kconst Animal* animals [][m[K’
+   const Animal *animals[[01;31m[K][m[K = {
+                         [01;31m[K^[m[K
+[01m[Kmain.cc:10:16:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Kconst Animal animals [2][m[K’
+   const Animal [01;36m[Kanimals[m[K[] = { fido, fluffy };
+                [01;36m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:23:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   for (auto animalP : [01;31m[Kanimals[m[K) {
+                       [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:13:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[KanimalP[m[K’ to be of abstract type ‘[01m[KAnimal[m[K’
+   for (auto [01;31m[KanimalP[m[K : animals) {
+             [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:20:19:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP[01;31m[K->[m[Kname << " says " << animalP->says() << std::endl;
+                   [01;31m[K^~[m[K
+[01m[Kmain.cc:20:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP->name << " says " << animalP[01;31m[K->[m[Ksays() << std::endl;
+                                                [01;31m[K^~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:10:24:[m[K [01;31m[Kerror: [m[Kinvalid abstract type ‘[01m[KAnimal[m[K’ for ‘[01m[Kanimals[m[K’
+   const Animal animals[[01;31m[K][m[K = { fido, fluffy };
+                        [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:4:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KAnimal[m[K’:
+ class [01;36m[KAnimal[m[K {
+       [01;36m[K^~~~~~[m[K
+[01m[Kanimal.hh:9:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says() const[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  const = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   const Animal animals[] = { fido, fluffy [01;31m[K}[m[K;
+                                           [01;31m[K^[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+[01m[Kmain.cc:11:25:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kconst Animal* animals [][m[K’
+   const Animal *animals[[01;31m[K][m[K = {
+                         [01;31m[K^[m[K
+[01m[Kmain.cc:10:16:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Kconst Animal animals [2][m[K’
+   const Animal [01;36m[Kanimals[m[K[] = { fido, fluffy };
+                [01;36m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:23:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   for (auto animalP : [01;31m[Kanimals[m[K) {
+                       [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:13:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[KanimalP[m[K’ to be of abstract type ‘[01m[KAnimal[m[K’
+   for (auto [01;31m[KanimalP[m[K : animals) {
+             [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:20:19:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP[01;31m[K->[m[Kname << " says " << animalP->says() << endl;
+                   [01;31m[K^~[m[K
+[01m[Kmain.cc:20:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP->name << " says " << animalP[01;31m[K->[m[Ksays() << endl;
+                                                [01;31m[K^~[m[K
+[01m[Kmain.cc:20:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kendl[m[K’ was not declared in this scope
+     out << animalP->name << " says " << animalP->says() << [01;31m[Kendl[m[K;
+                                                            [01;31m[K^~~~[m[K
+[01m[Kmain.cc:20:60:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/usr/include/c++/8/iostream:39[m[K,
+                 from [01m[Kanimal.hh:2[m[K,
+                 from [01m[Kmain.cc:1[m[K:
+[01m[K/usr/include/c++/8/ostream:590:5:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::endl[m[K’
+     [01;36m[Kendl[m[K(basic_ostream<_CharT, _Traits>& __os)
+     [01;36m[K^~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:10:24:[m[K [01;31m[Kerror: [m[Kinvalid abstract type ‘[01m[KAnimal[m[K’ for ‘[01m[Kanimals[m[K’
+   const Animal animals[[01;31m[K][m[K = { fido, fluffy };
+                        [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:4:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KAnimal[m[K’:
+ class [01;36m[KAnimal[m[K {
+       [01;36m[K^~~~~~[m[K
+[01m[Kanimal.hh:9:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says() const[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  const = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   const Animal animals[] = { fido, fluffy [01;31m[K}[m[K;
+                                           [01;31m[K^[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+[01m[Kmain.cc:11:25:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kconst Animal* animals [][m[K’
+   const Animal *animals[[01;31m[K][m[K = {
+                         [01;31m[K^[m[K
+[01m[Kmain.cc:10:16:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Kconst Animal animals [2][m[K’
+   const Animal [01;36m[Kanimals[m[K[] = { fido, fluffy };
+                [01;36m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:23:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   for (auto animalP : [01;31m[Kanimals[m[K) {
+                       [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:13:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[KanimalP[m[K’ to be of abstract type ‘[01m[KAnimal[m[K’
+   for (auto [01;31m[KanimalP[m[K : animals) {
+             [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:20:19:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP[01;31m[K->[m[Kname << " says " << animalP->says() << endl;
+                   [01;31m[K^~[m[K
+[01m[Kmain.cc:20:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP->name << " says " << animalP[01;31m[K->[m[Ksays() << endl;
+                                                [01;31m[K^~[m[K
+[01m[Kmain.cc:20:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kendl[m[K’ was not declared in this scope
+     out << animalP->name << " says " << animalP->says() << [01;31m[Kendl[m[K;
+                                                            [01;31m[K^~~~[m[K
+[01m[Kmain.cc:20:60:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/usr/include/c++/8/iostream:39[m[K,
+                 from [01m[Kanimal.hh:2[m[K,
+                 from [01m[Kmain.cc:1[m[K:
+[01m[K/usr/include/c++/8/ostream:590:5:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::endl[m[K’
+     [01;36m[Kendl[m[K(basic_ostream<_CharT, _Traits>& __os)
+     [01;36m[K^~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:10:24:[m[K [01;31m[Kerror: [m[Kinvalid abstract type ‘[01m[KAnimal[m[K’ for ‘[01m[Kanimals[m[K’
+   const Animal animals[[01;31m[K][m[K = { fido, fluffy };
+                        [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:4:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KAnimal[m[K’:
+ class [01;36m[KAnimal[m[K {
+       [01;36m[K^~~~~~[m[K
+[01m[Kanimal.hh:9:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says() const[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  const = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   const Animal animals[] = { fido, fluffy [01;31m[K}[m[K;
+                                           [01;31m[K^[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+[01m[Kmain.cc:11:25:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kconst Animal* animals [][m[K’
+   const Animal *animals[[01;31m[K][m[K = {
+                         [01;31m[K^[m[K
+[01m[Kmain.cc:10:16:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Kconst Animal animals [2][m[K’
+   const Animal [01;36m[Kanimals[m[K[] = { fido, fluffy };
+                [01;36m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:23:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   for (auto animalP : [01;31m[Kanimals[m[K) {
+                       [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:13:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[KanimalP[m[K’ to be of abstract type ‘[01m[KAnimal[m[K’
+   for (auto [01;31m[KanimalP[m[K : animals) {
+             [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:20:19:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP[01;31m[K->[m[Kname << " says " << animalP->says() << std::endl;
+                   [01;31m[K^~[m[K
+[01m[Kmain.cc:20:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP->name << " says " << animalP[01;31m[K->[m[Ksays() << std::endl;
+                                                [01;31m[K^~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ main.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main main.o; do echo $t >>.gitignore; done
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ ./main.cc
+bash: ./main.cc: Permission denied
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ ./main.ccmake -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:10:24:[m[K [01;31m[Kerror: [m[Kinvalid abstract type ‘[01m[KAnimal[m[K’ for ‘[01m[Kanimals[m[K’
+   const Animal animals[[01;31m[K][m[K = { fido, fluffy };
+                        [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:4:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KAnimal[m[K’:
+ class [01;36m[KAnimal[m[K {
+       [01;36m[K^~~~~~[m[K
+[01m[Kanimal.hh:9:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says() const[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  const = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   const Animal animals[] = { fido, fluffy [01;31m[K}[m[K;
+                                           [01;31m[K^[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+[01m[Kmain.cc:19:23:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   for (auto animalP : [01;31m[Kanimals[m[K) {
+                       [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:13:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[KanimalP[m[K’ to be of abstract type ‘[01m[KAnimal[m[K’
+   for (auto [01;31m[KanimalP[m[K : animals) {
+             [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:20:19:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP[01;31m[K->[m[Kname << " says " << animalP->says() << std::endl;
+                   [01;31m[K^~[m[K
+[01m[Kmain.cc:20:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP->name << " says " << animalP[01;31m[K->[m[Ksays() << std::endl;
+                                                [01;31m[K^~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ main.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main main.o; do echo $t >>.gitignore; done
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ ./main
+bessie says moo
+bossy says moo
+fido says woof
+fluffy says meow
+rufus says woof
+simba says meow
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ ./mainmake -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:21:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst class Animal[m[K’ has no member named ‘[01m[Keats[m[K’; did you mean ‘[01m[Ksays[m[K’?
+  out << animalP->name << " eats " << animalP->[01;31m[Keats[m[K() << std::endl;
+                                               [01;31m[K^~~~[m[K
+                                               [32m[Ksays[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ main.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main main.o; do echo $t >>.gitignore; done
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile./main[K
+bessie says moo
+bessie eats grass
+bossy says moo
+bossy eats grass
+fido says woof
+fido eats beaf
+fluffy says meow
+fluffy eats fish
+rufus says woof
+rufus eats beaf
+simba says meow
+simba eats fish
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ ./mainmake -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ main.o -o main
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile./main[K
+bessie says moo
+bessie eats grass
+bossy says moo
+bossy eats grass
+fido says woof
+fido eats beaf
+fluffy says meow
+fluffy eats fish
+rufus says woof
+rufus eats beaf
+simba says meow
+simba eats fish
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ ./mainmake -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ main.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main main.o; do echo $t >>.gitignore; done
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ make -f ../Makefile./main[K
+bessie eats grass
+bossy eats grass
+fido eats beaf
+fluffy eats fish
+rufus eats beaf
+simba eats fish
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/1-animal$ cd ..
+hkilic2@g7-21:~/i240b/submit/lab5/exercises$ ls
+1-animal  2-expr  Makefile
+hkilic2@g7-21:~/i240b/submit/lab5/exercises$ cd 2-expr
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ cd 2-exprls[Kcd .../mainmake -f ../Makefile
+g++ -MT tostring.o -MMD -MP -MF .deps/tostring.d -g -Wall -std=c++17 -c tostring.cc
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ -MT parse.o -MMD -MP -MF .deps/parse.d -g -Wall -std=c++17 -c parse.cc
+g++ -MT expr.o -MMD -MP -MF .deps/expr.d -g -Wall -std=c++17 -c expr.cc
+g++ tostring.o main.o parse.o expr.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o main.o parse.o expr.o; do echo $t >>.gitignore; done
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f ../Makefile[10Pcd 2-exprls[Kcd .../main
+usage: ./main PREFIX_EXPR...
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ ./mainmake -f ../Makefile./main[K '+ 1 * 2 3'  '* + 1 2 3'  '+ / 40 5 - 3 2'
+(1) + ((2) * (3)) = 7
+((1) + (2)) * (3) = 9
+((40) / (5)) + ((3) - (2)) = 9
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ dc
+^Z
+[1]+  Stopped                 dc
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ dc
+l p c
+0
+l
+f
+0
+123   2 3 * + pc
+7
+4 5 * 8 4 / + p c
+22
+^Z
+[2]+  Stopped                 dc
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ dc./main '+ 1 * 2 3'  '* + 1 2 3'  '+ / 40 5 - 3 2'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C '+ 1 * 2 3'  '* + 1 2 3'  '+ / 40 5 - 3 2'[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K "+ 1 2" "- 3 4" "* 5 6" "/ 77 8"
+(1) + (2) = 3
+(3) - (4) = -1
+(5) * (6) = 30
+(77) / (8) = 9
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ [Khkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ ./main "+ 1 2" "- 3 4" "* 5 6" "/ 77 8"dc[K./main '+ 1 * 2 3'  '* + 1 2 3'  '+ / 40 5 - 3 2'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake -f ../Makefile[10Pcd 2-exprls[Kcd 2-exprmake -f ../Makefile
+make: Nothing to be done for 'all'.
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string AddExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:73:3:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K}[m[K’ token
+   [01;31m[K}[m[K
+   [01;31m[K^[m[K
+[01m[Kexpr.hh:72:10:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+    return
+          [01;31m[K^[m[K
+          [32m[K;[m[K
+   [32m[K}[m[K
+   [32m[K~[m[K       
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string AddExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:73:3:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K}[m[K’ token
+   [01;31m[K}[m[K
+   [01;31m[K^[m[K
+[01m[Kexpr.hh:72:10:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+    return
+          [01;31m[K^[m[K
+          [32m[K;[m[K
+   [32m[K}[m[K
+   [32m[K~[m[K       
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string AddExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:72:56:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+    return std::to_string(left->eval(), right->eval(), +[01;31m[K)[m[K;
+                                                        [01;31m[K^[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string AddExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:72:40:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+    return std::to_string(left, right, +[01;31m[K)[m[K;
+                                        [01;31m[K^[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string AddExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:72:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->[01;31m[KdcCode[m[K() + right->dcCode() +  "+ ";
+                 [01;31m[K^~~~~~[m[K
+[01m[Kexpr.hh:72:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->dcCode() + right->[01;31m[KdcCode[m[K() +  "+ ";
+                                   [01;31m[K^~~~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string AddExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:72:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->[01;31m[KdcCode[m[K() + right->dcCode() +  "+ ";
+                 [01;31m[K^~~~~~[m[K
+[01m[Kexpr.hh:72:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->dcCode() + right->[01;31m[KdcCode[m[K() +  "+ ";
+                                   [01;31m[K^~~~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string AddExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:72:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->[01;31m[KdcCode[m[K() + right->dcCode() +  "+ ";
+                 [01;31m[K^~~~~~[m[K
+[01m[Kexpr.hh:72:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->dcCode() + right->[01;31m[KdcCode[m[K() +  "+ ";
+                                   [01;31m[K^~~~~~[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string SubExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:99:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->[01;31m[KdcCode[m[K() + right->dcCode() +  "- ";
+                 [01;31m[K^~~~~~[m[K
+[01m[Kexpr.hh:99:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->dcCode() + right->[01;31m[KdcCode[m[K() +  "- ";
+                                   [01;31m[K^~~~~~[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string MulExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:126:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->[01;31m[KdcCode[m[K() + right->dcCode() +  "* ";
+                 [01;31m[K^~~~~~[m[K
+[01m[Kexpr.hh:126:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->dcCode() + right->[01;31m[KdcCode[m[K() +  "* ";
+                                   [01;31m[K^~~~~~[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string DivExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:152:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->[01;31m[KdcCode[m[K() + right->dcCode() +  "/ ";
+                 [01;31m[K^~~~~~[m[K
+[01m[Kexpr.hh:152:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’
+    return left->dcCode() + right->[01;31m[KdcCode[m[K() +  "/ ";
+                                   [01;31m[K^~~~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string AddExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:73:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’; did you mean ‘[01m[Kdccode[m[K’?
+    return left->[01;31m[KdcCode[m[K() + right->dcCode() +  "+ ";
+                 [01;31m[K^~~~~~[m[K
+                 [32m[Kdccode[m[K
+[01m[Kexpr.hh:73:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’; did you mean ‘[01m[Kdccode[m[K’?
+    return left->dcCode() + right->[01;31m[KdcCode[m[K() +  "+ ";
+                                   [01;31m[K^~~~~~[m[K
+                                   [32m[Kdccode[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string SubExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:100:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’; did you mean ‘[01m[Kdccode[m[K’?
+    return left->[01;31m[KdcCode[m[K() + right->dcCode() +  "- ";
+                 [01;31m[K^~~~~~[m[K
+                 [32m[Kdccode[m[K
+[01m[Kexpr.hh:100:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’; did you mean ‘[01m[Kdccode[m[K’?
+    return left->dcCode() + right->[01;31m[KdcCode[m[K() +  "- ";
+                                   [01;31m[K^~~~~~[m[K
+                                   [32m[Kdccode[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string MulExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:127:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’; did you mean ‘[01m[Kdccode[m[K’?
+    return left->[01;31m[KdcCode[m[K() + right->dcCode() +  "* ";
+                 [01;31m[K^~~~~~[m[K
+                 [32m[Kdccode[m[K
+[01m[Kexpr.hh:127:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’; did you mean ‘[01m[Kdccode[m[K’?
+    return left->dcCode() + right->[01;31m[KdcCode[m[K() +  "* ";
+                                   [01;31m[K^~~~~~[m[K
+                                   [32m[Kdccode[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kstd::__cxx11::string DivExpr::dcCode()[m[K’:
+[01m[Kexpr.hh:153:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’; did you mean ‘[01m[Kdccode[m[K’?
+    return left->[01;31m[KdcCode[m[K() + right->dcCode() +  "/ ";
+                 [01;31m[K^~~~~~[m[K
+                 [32m[Kdccode[m[K
+[01m[Kexpr.hh:153:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Expr[m[K’ {aka ‘[01m[Kclass Expr[m[K’} has no member named ‘[01m[KdcCode[m[K’; did you mean ‘[01m[Kdccode[m[K’?
+    return left->dcCode() + right->[01;31m[KdcCode[m[K() +  "/ ";
+                                   [01;31m[K^~~~~~[m[K
+                                   [32m[Kdccode[m[K
+make: *** [../Makefile:48: main.o] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f ../Makefile
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ -MT parse.o -MMD -MP -MF .deps/parse.d -g -Wall -std=c++17 -c parse.cc
+g++ -MT expr.o -MMD -MP -MF .deps/expr.d -g -Wall -std=c++17 -c expr.cc
+g++ tostring.o main.o parse.o expr.o -o main
+/usr/bin/ld: parse.o: in function `Expr::Expr()':
+/home/hkilic2/i240b/submit/lab5/exercises/2-expr/expr.hh:10: undefined reference to `vtable for Expr'
+/usr/bin/ld: expr.o:(.data.rel.ro._ZTI7DivExpr[_ZTI7DivExpr]+0x10): undefined reference to `typeinfo for Expr'
+/usr/bin/ld: expr.o:(.data.rel.ro._ZTI7MulExpr[_ZTI7MulExpr]+0x10): undefined reference to `typeinfo for Expr'
+/usr/bin/ld: expr.o:(.data.rel.ro._ZTI7SubExpr[_ZTI7SubExpr]+0x10): undefined reference to `typeinfo for Expr'
+/usr/bin/ld: expr.o:(.data.rel.ro._ZTI7AddExpr[_ZTI7AddExpr]+0x10): undefined reference to `typeinfo for Expr'
+/usr/bin/ld: expr.o:(.data.rel.ro._ZTI7IntExpr[_ZTI7IntExpr]+0x10): undefined reference to `typeinfo for Expr'
+collect2: error: ld returned 1 exit status
+make: *** [../Makefile:18: main] Error 1
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ gedit main.cc 
+
+(gedit:1164786): Gtk-[1;33mWARNING[0m **: [34m17:17:07.547[0m: Calling org.xfce.Session.Manager.Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Method "Inhibit" with signature "susu" on interface "org.xfce.Session.Manager" doesn't exist
+
+^X^C
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f  [K../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ -MT parse.o -MMD -MP -MF .deps/parse.d -g -Wall -std=c++17 -c parse.cc
+g++ -MT expr.o -MMD -MP -MF .deps/expr.d -g -Wall -std=c++17 -c expr.cc
+g++ tostring.o main.o parse.o expr.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o main.o parse.o expr.o; do echo $t >>.gitignore; done
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ ./main +[K"++ [K[K + 1 2 3"
+6p c
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ gedit expr.hh 
+^C
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ gedit expr.hh  [K7[K&
+[3] 1165001
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ gedit expr.hh &[K./main "+ + 1 2 3"[4Pgedit expr.hh &[Kgedit expr.hh &[K./main "+ + 1 2 3"make -f ../Makefile [6Pgedit main.cc[C
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ 
+(gedit:1165001): Gtk-[1;33mWARNING[0m **: [34m17:19:02.643[0m: Calling org.xfce.Session.Manager.Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Method "Inhibit" with signature "susu" on interface "org.xfce.Session.Manager" doesn't exist
+
+gedit main.cc ^C
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ gedit main.cc expr.hh &[K./main "+ + 1 2 3"
+6p c
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ ./main "+ + 1 2 3"[4Pgedit main.cc expr.hh &[K./main "+ + 1 2 3"make -f ../Makefile [6Pgedit main.cc[C[6@make -f ../Makefile[C
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ tostring.o main.o parse.o expr.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o main.o parse.o expr.o; do echo $t >>.gitignore; done
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ make -f ../Makefile [2P./main "+ + 1 2 3"
+1 2 + 3 + p c
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ ./main "- 3 2" "* + 1 2 5" | dc
+1
+15
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ exit
+There are stopped jobs.
+hkilic2@g7-21:~/i240b/submit/lab5/exercises/2-expr$ exit
+
+Script done on 2020-02-27 17:21:11-05:00 [COMMAND_EXIT_CODE="0"]
