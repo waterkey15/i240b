@@ -1,0 +1,7 @@
+.deps
+main
+sorts.o
+my_class.o
+ops.o
+main.o
+my_class2.o
