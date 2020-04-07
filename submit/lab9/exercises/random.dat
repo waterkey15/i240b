@@ -1,0 +1,2 @@
+for x in `seq 100000`; do echo $RANDOM; done
+
