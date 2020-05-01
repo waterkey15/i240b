@@ -21,6 +21,7 @@ main(int argc, char* argv[])
   for (std::unique_ptr<Command> commandP = commandIn.next();
        commandP != nullptr;
        commandP = commandIn.next()) {
+
     std::cout << *commandP << std::endl;
   }
 }
