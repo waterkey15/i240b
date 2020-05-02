@@ -1,10 +1,7 @@
-all: command-test multi-queues 
+all: multi-queues 
 
 multi-queues: multi-queues.o command.o command-stream.o job.o
 	g++ -o  multi-queues multi-queues.o command.o command-stream.o job.o 
-
-command-test: command-test.o command.o command-stream.o job.o
-	g++ -o  command-test command-test.o command.o command-stream.o job.o 
 
 command-test.o: command-test.cc command.hh job.hh command-stream.hh
 	g++ -c command-test.cc
