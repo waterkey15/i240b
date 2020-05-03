@@ -1,4 +1,3 @@
-//source code is from internet  https://www.sanfoundry.com/cpp-program-implements-priority-queue/
 
 #ifndef HEAP_HH_
 #define HEAP_HH_
